@@ -1,0 +1,92 @@
+/* --------- Global style */
+
+body {
+    background-color: #fffafa;
+    font-family: "Montserrat", sans-serif;
+    /* color: #696969; */
+}
+
+/* --------- Heading */
+
+
+.header {
+    color: #C71585;
+}
+
+.header-name {
+    font-family: Mansalva, cursive;
+}
+
+/* Game layout    */
+
+.game-area {      /* Game-area influenced by Code Institute Mathquizz layout */
+    background-color: #d3cfcf; 
+    box-sizing: border-box;
+    border-radius: 15px;
+    max-height: 600px;
+    max-width: 1050px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 1%;
+}
+
+.control-buttons {
+    box-shadow: 1px 2px 5px rgb(105, 105, 105);
+    transition: all .4s;
+}
+
+.control-buttons:hover {
+    box-shadow: 2px 3px 15px rgb(105, 105, 105);
+    transform: translateY(-1px);
+}
+
+.buttons {
+    height: 160px;
+    border-radius: 25px;
+    box-shadow: 1px 2px 5px rgb(105, 105, 105);
+    transition: all .4s;
+    
+}
+
+.buttons:hover {
+    box-shadow: 3px 5px 15px rgb(105, 105, 105);
+    transform: translateY(-1px);
+    /* filter: brightness(140%) saturate(125%); */
+
+}
+
+#start-button {
+    border: 1px solid rgb(33, 95, 14);
+    color: #eee;
+}
+
+#pause-button {
+    border: 1px solid rgb(180, 120, 9);
+    color: black;
+}
+
+#reset-button {
+    border: 1px solid rgb(180, 42, 42);
+    color: #eee;
+}
+
+#button-1 {
+    background-color: rgb(211, 4, 4);
+    border: 3px solid rgb(153, 32, 32);
+}
+
+#button-2 {
+    background-color: green;
+    border: 3px solid rgb(33, 95, 14);
+}
+
+#button-3 {
+    background-color: orange;
+    border: 3px solid rgb(180, 120, 9);
+}
+
+#button-4 {
+    background-color: rgb(68, 103, 216);
+    border: 3px solid rgb(23, 52, 218);
+}
+/* End of Game Layout */

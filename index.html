@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<title>Simon Says</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1 class="header mb-4"><i class="fas fa-random fa-2x "><span class="px-4 header-name">Simon Says!</span></i></h1>
+                <h4 class="text-muted">Welcome to the game that will challange your memory!</h4>
+            </div>   
+        </div>
+        
+        <!-- Game area -->
+        <div class="container">
+            <div class="row">
+                <div class="col game-area">
+                    <div class="row">     <!-- Game buttons -->
+                        <div class="col-12 text-center my-2">
+                            <button type="button" class="btn btn-success btn-sm control-buttons" id="start-button">New Game</button>
+                            <button type="button" class="btn btn-warning btn-sm control-buttons" id="pause-button">Pause Game</button>
+                            <button type="button" class="btn btn-danger btn-sm control-buttons" id="reset-button">Reset Game</button>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-5">    <!-- Main game-area -->
+                        <div class="col-4 m-3 buttons" id="button-1">       
+                            Button 1
+                        </div>
+                        <div class="col-4 m-3 buttons" id="button-2">
+                            Button 2
+                        </div>
+                        <div class="col-4 m-3 buttons" id="button-3">
+                            Button 3
+                        </div>
+                        <div class="col-4 m-3 buttons" id="button-4">
+                            Button 4
+                        </div>
+                        <div class="mt-4 text-center font-weight-bold score-area">
+                            <p class="scores">Round: <span id="round">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Game area -->
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+<script src="scripts/memory.js"></script>
+</body>
+</html>
