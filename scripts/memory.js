@@ -1,52 +1,23 @@
-// document.addEventListener('DOMContentLoaded', function() {
-
-//     let ctrlButtons = document.getElementsByClassName('control-buttons');
-
-//     for (let button of ctrlButtons) {
-//         button.addEventListener('click', function() {
-//             if (this.getAttribute('data-type') === 'resetGame') {
-//                 return alert('Please press the Start button to begin playing');                                         // Function resetGame()
-//             } else {
-//                 let gameType = this.getAttribute('data-type');
-//                 runGame(gameType);
-//             }
-//         })
-//     }
-
-//     runGame('normal');
-// })
-
-// function runGame(gameType) {
-
-//     // starts a random sequence on buttons 1-4 and
-
-//     if (gameType === 'normal') {
-//         displayAdditionQuestion(num1, num2);  //MÅSTE OMDEFINERAS 
-//         } else {
-//         alert(`Unknown game type ${gameType}`);
-//         throw `Unknown game type ${gameType}, aborting!`;
-//     }
-// };
-
 document.addEventListener('DOMContentLoaded', function() {
     
     var sequence = [];
     var sequencePlayer = [];
     var roundNum = 0; 
-    var scoreNum = 0; // Do I need this function in this releasse??
+    // var scoreNum = 0;  Do I need this function in this releasse??
 
-    // This starts the game by pushing the start button and launching gamePlay
-    $(document).on("keydown", function(e){      //Behöver ändras till att starta vid onclick/keydown på "start"knappen
-        if (e.keyCode === 13){
+    // This starts the game when clicking the start button which calls gamePlay
+    $(document).ready(function(){
+        $("button").click(function(){
             gamePlay();
-        }
+        });
     });
+
     // gamePlay creates a random number and pushes it to sequence
     function gamePlay() {
         var randomNum = Math.floor(Math.random()*4);
         sequence.push(randomNum); 
         showSequence(sequence[sequence.length - 1]);
-        levelUp();
+        // levelUp();   Testar att muta denna
         sequencePlayer=[];
     };
 
@@ -87,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     //This converts the players clicks into numbers and pushes it to a new array.
-    $(".buttons").click(function(event){
+    $(".buttons").click(function(){
         var playerClicks= $(this).attr("id");
 
         switch(playerClicks){
@@ -107,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             
             case "blue":
-                sequenceUser.push(3);
+                sequencePlayer.push(3);
                 showSequence(3);
                 break;
             }
@@ -121,8 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if(sequence.length === sequencePlayer.length) {
                 setTimeout(function () {
-                    nextSequence();
+                    gamePlay();
                 }, 1000);
+                levelUp();
             }
         } else {
             errorMsg();
@@ -130,15 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Calls error message
-    function errorMsg(){
-        $("body").css("background-color", "red")
-        $("h1").text("Game Over");
+    function errorMsg() {
+        $("button").css("background-color", "red")
+        $("h6").text("Game Over");
         setTimeout(function () {
-            $("h1").text("Press Enter Key to start");
-            $("body").css("background-color", "#011F3F");
+            $("h6").text("Press Start button to try again");
+            $("button").css("background-color", "green");
         }, 1500);
-    roundNum = 0;
-    sequence = [];
+        roundNum = 0;
+        sequence = [];
     }
 
 });
