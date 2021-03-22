@@ -3,7 +3,6 @@
 body {
     background-color: #fffafa;
     font-family: "Montserrat", sans-serif;
-    /* color: #696969; */
 }
 
 /* --------- Heading */
@@ -24,68 +23,85 @@ body {
     box-sizing: border-box;
     border-radius: 15px;
     max-height: 600px;
-    max-width: 1050px;
+    max-width: 800px;
     margin: auto;
     margin-top: 20px;
     padding: 1%;
 }
 
 .control-buttons {
-    box-shadow: 1px 2px 5px rgb(105, 105, 105);
+    border-radius: 5px;
+    box-shadow: 0px 3px #999;
     transition: all .4s;
 }
 
 .control-buttons:hover {
-    box-shadow: 2px 3px 15px rgb(105, 105, 105);
-    transform: translateY(-1px);
+    box-shadow: 0px 3px #999;
+    filter: brightness(90%)
+}
+
+.control-buttons:active {
+    box-shadow: 2px 5px 25px #999;
+    transform: translateY(2px);
+    transition: all .4s;
+    filter: brightness(110%) saturate(110%);
 }
 
 .buttons {
     height: 160px;
     border-radius: 25px;
-    box-shadow: 1px 2px 5px rgb(105, 105, 105);
-    transition: all .4s;
-    
+    cursor: pointer;
+    box-shadow: 0px 8px #999;
+    transition: all .4s;  
 }
 
 .buttons:hover {
-    box-shadow: 3px 5px 15px rgb(105, 105, 105);
-    transform: translateY(-1px);
-    /* filter: brightness(140%) saturate(125%); */
+    box-shadow: 3px 5px 15px #999;
+    box-shadow: 0px 8px #999;
+    filter: brightness(90%);
+}
 
+.buttons:active {
+    box-shadow: 2px 5px 25px #666;
+    transform: translateY(4px);
+    transition: all .4s;
+    filter: brightness(140%) saturate(200%);
 }
 
 #start-button {
+    background-color: green;
     border: 1px solid rgb(33, 95, 14);
     color: #eee;
 }
 
-#pause-button {
+/* #pause-button {
+    background-color: orange;
     border: 1px solid rgb(180, 120, 9);
     color: black;
 }
 
 #reset-button {
+    background-color: red;
     border: 1px solid rgb(180, 42, 42);
     color: #eee;
+} */
+
+#lilac {
+    background-color: rgb(255, 44, 125);
+    border: 3px solid rgb(207, 22, 130);
 }
 
-#button-1 {
-    background-color: rgb(211, 4, 4);
-    border: 3px solid rgb(153, 32, 32);
-}
-
-#button-2 {
+#green {
     background-color: green;
     border: 3px solid rgb(33, 95, 14);
 }
 
-#button-3 {
+#orange {
     background-color: orange;
     border: 3px solid rgb(180, 120, 9);
 }
 
-#button-4 {
+#blue {
     background-color: rgb(68, 103, 216);
     border: 3px solid rgb(23, 52, 218);
 }
