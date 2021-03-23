@@ -45,15 +45,31 @@ JS Hint
 HTML Validator
 CSS Validator
 
+## Bugs
+
+I have not got it working as planned... I have spent better part of the last 3 days trying to solve the lighting up part of the mechansism. I made it to difficult I think.
+After checking on solutions on StackOverflow as well as youtube I should have set it up in a different approach. 
+
+I should have contacted Tutors earlier on which would have made my code easier and more readable and thus easier to decipher. 
+My main issue in the memory.js file is probably the use of Switch statement, when I probably should have gone with a FOR -loop..
+
+Through all the testing and trying to fix the mechanism I got it working for round 1 of the game. It does not continue correctly on to round 2 and beyond.
+parallell to assessment..
+
 # Deployment
 It is published using Github pages: https://d99mli.github.io/ms2-memorygame/
+
 # Credits
+
+I have used Stackoverflow extensively during the Javascript/JQuery parts of the course. 
 
 ## Content
 
 ## Media
 
 ## Acknowledgements
+
+Big thanks to Code Institute Tutors for the patience in helping me the last days with bug fixing!
 
 
 
