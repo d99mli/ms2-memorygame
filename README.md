@@ -35,14 +35,18 @@ A single webpage, with three distinct sections, a header for the "logo", the mai
 
 # Technologies Used 
 
-For Mockups, Balsamiq was used.
 CSS styling was used by utilizing Bootstrap framework. The code snippets have been implemented from [Bootstrap](getbootstrap.com).
 Javascript and JQuery was used for writing the logic behind the interactivity
 
 # Testing
 
-# Deployment
+I have run it through:
+JS Hint
+HTML Validator
+CSS Validator
 
+# Deployment
+It is published using Github pages: https://d99mli.github.io/ms2-memorygame/
 # Credits
 
 ## Content

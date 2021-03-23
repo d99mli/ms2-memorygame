@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // This starts the game when clicking the start button which calls gamePlay
     $(document).ready(function(){
         $("#start-button").click(function(){
-            console.log("Initializing game after click on start button"); //works
             gamePlay();
         });
     });
@@ -17,43 +16,39 @@ document.addEventListener('DOMContentLoaded', function() {
     function gamePlay() {
 
         let randomNum = Math.floor(Math.random()*4);
-        // randomNum;
-        console.log(randomNum); //works
         sequence.push(randomNum); 
-        console.log(sequence); //works
-        showSequence(sequence[sequence.length - 1]);
-        levelUp();
+        randomSequence(sequence[sequence.length -1]);
         playerSequence=[];
+        //levelUp(); Tried setting levelUp last, was before playerSequence. Have moved it to line 98
     }
 
     // This sets the array index of each button and respective color and sets the action of "lighting up"
-    function showSequence(element) {
+    function randomSequence(element) {
     
         switch (element){
             case 0:
                 $("#lilac").addClass("buttonClick");
                 setTimeout(function(){
                     $("#lilac").removeClass("buttonClick");
-                }, 750);    //changed from 400 to 750 and created new class in style.css called buttonClick
+                }, 250);    //changed from 400 to 750 and created new class in style.css called buttonClick
                 break;
             case 1:
                 $("#green").addClass("buttonClick");
                 setTimeout(function () {
                     $("#green").removeClass("buttonClick");
-                }, 750);
+                }, 250);
                 break;
             case 2:
                 $("#orange").addClass("buttonClick");
                 setTimeout(function () {
                     $("#orange").removeClass("buttonClick");
-                }, 750);
+                }, 250);
                 break;
             case 3:
                 $("#blue").addClass("buttonClick");
                 setTimeout(function () {
                     $("#blue").removeClass("buttonClick");
-                }, 750);
-                break;
+                }, 250);
         }   
     }
 
@@ -68,39 +63,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
         switch(playerClicks){
             case "lilac":
-                playerSequence.push(0);
-                showSequence(0);
+                randomSequence(0);
+                playerSequence.push(0);                
                 break;
 
             case "green":
-                playerSequence.push(1);
-                showSequence(1);
+                randomSequence(1);
+                playerSequence.push(1);                
                 break;
             
             case "orange":
-                playerSequence.push(2);
-                showSequence(2);
+                randomSequence(2);
+                playerSequence.push(2);                
                 break;
             
             case "blue":
-                playerSequence.push(3);
-                showSequence(3);
+                randomSequence(3);
+                playerSequence.push(3);                
                 break;
             }
-        checkSequence(playerSequence.length-1);             
+        checkSequence(playerSequence.length -1);
     }); 
     
     //This checks if the sequences is correct so far
     function checkSequence(indexArr) { 
 
-        if(playerSequence[indexArr] === sequence[indexArr]){
+        if((sequence[indexArr] === playerSequence[indexArr]) && (sequence.length === playerSequence.length)) {
 
-            if(sequence.length === playerSequence.length) {
-                setTimeout(function () {
-                    gamePlay();
-                }, 1000);
+            setTimeout(function () {
                 levelUp();
-            }
+                gamePlay();
+            }, 1500);
         } else {
             errorMsg();
         }
