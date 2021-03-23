@@ -1,96 +1,101 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    var sequence = [];
-    var sequencePlayer = [];
-    var roundNum = 0; 
+    let sequence = [];
+    let playerSequence = [];
+    let roundNum = 0; 
     // var scoreNum = 0;  Do I need this function in this releasse??
 
     // This starts the game when clicking the start button which calls gamePlay
     $(document).ready(function(){
-        $("button").click(function(){
+        $("#start-button").click(function(){
+            console.log("Initializing game after click on start button"); //works
             gamePlay();
         });
     });
 
     // gamePlay creates a random number and pushes it to sequence
     function gamePlay() {
-        var randomNum = Math.floor(Math.random()*4);
+
+        let randomNum = Math.floor(Math.random()*4);
+        // randomNum;
+        console.log(randomNum); //works
         sequence.push(randomNum); 
+        console.log(sequence); //works
         showSequence(sequence[sequence.length - 1]);
-        // levelUp();   Testar att muta denna
-        sequencePlayer=[];
-    };
+        levelUp();
+        playerSequence=[];
+    }
 
     // This sets the array index of each button and respective color and sets the action of "lighting up"
     function showSequence(element) {
     
         switch (element){
             case 0:
-                $("#lilac").addClass("buttons:active");
+                $("#lilac").addClass("buttonClick");
                 setTimeout(function(){
-                    $("#lilac").removeClass("buttons:active");
-                }, 400)
+                    $("#lilac").removeClass("buttonClick");
+                }, 750);    //changed from 400 to 750 and created new class in style.css called buttonClick
                 break;
             case 1:
-                $("#green").addClass("buttons:active");
+                $("#green").addClass("buttonClick");
                 setTimeout(function () {
-                    $("#green").removeClass("buttons:active");
-                }, 400)
+                    $("#green").removeClass("buttonClick");
+                }, 750);
                 break;
             case 2:
-                $("#orange").addClass("buttons:active");
+                $("#orange").addClass("buttonClick");
                 setTimeout(function () {
-                    $("#orange").removeClass("buttons:active");
-                }, 400)
+                    $("#orange").removeClass("buttonClick");
+                }, 750);
                 break;
             case 3:
-                $("#blue").addClass("buttons:active");
+                $("#blue").addClass("buttonClick");
                 setTimeout(function () {
-                    $("#blue").removeClass("buttons:active");
-                }, 400)
+                    $("#blue").removeClass("buttonClick");
+                }, 750);
                 break;
         }   
-    };
+    }
 
     function levelUp() {
         roundNum++;
         $("#round").text(`Level: ${roundNum}`); 
-    };
+    }
 
     //This converts the players clicks into numbers and pushes it to a new array.
     $(".buttons").click(function(){
-        var playerClicks= $(this).attr("id");
+        let playerClicks= $(this).attr("id");
 
         switch(playerClicks){
             case "lilac":
-                sequencePlayer.push(0);
+                playerSequence.push(0);
                 showSequence(0);
                 break;
 
             case "green":
-                sequencePlayer.push(1);
+                playerSequence.push(1);
                 showSequence(1);
                 break;
             
             case "orange":
-                sequencePlayer.push(2);
+                playerSequence.push(2);
                 showSequence(2);
                 break;
             
             case "blue":
-                sequencePlayer.push(3);
+                playerSequence.push(3);
                 showSequence(3);
                 break;
             }
-        checkSequence(sequencePlayer.length-1);             
+        checkSequence(playerSequence.length-1);             
     }); 
     
     //This checks if the sequences is correct so far
     function checkSequence(indexArr) { 
 
-        if(sequencePlayer[indexArr] === sequence[indexArr]){
+        if(playerSequence[indexArr] === sequence[indexArr]){
 
-            if(sequence.length === sequencePlayer.length) {
+            if(sequence.length === playerSequence.length) {
                 setTimeout(function () {
                     gamePlay();
                 }, 1000);
