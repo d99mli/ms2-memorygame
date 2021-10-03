@@ -1,0 +1,116 @@
+document.addEventListener('DOMContentLoaded', function() {
+    
+    let sequence = [];
+    let playerSequence = [];
+    let roundNum = 0;
+    
+    // var scoreNum = 0;  Do I need this function in this releasse??
+
+    // This starts the game when clicking the start button which calls gamePlay
+    $(document).ready(function(){
+        $("#start-button").click(function(){
+            gamePlay();
+        });
+    });
+
+    // gamePlay creates a random number and pushes it to sequence
+    function gamePlay() {
+
+        levelUp();
+        let randomNum = Math.floor(Math.random()*4); 
+        sequence.push(randomNum); 
+        randomSequence(sequence[sequence.length -1]);
+        playerSequence = [];
+        //levelUp(); Tried setting levelUp last, was before playerSequence. Have moved it to line 98
+    }
+
+    // This sets the array index of each button and respective color and sets the action of "lighting up"
+    function randomSequence(element) {
+    
+        switch (element){
+            case 0:
+                $("#lilac").addClass("buttonClick");
+                setTimeout(function(){
+                    $("#lilac").removeClass("buttonClick");
+                }, 250);    //changed from 400 to 750 and created new class in style.css called buttonClick
+                break;
+            case 1:
+                $("#green").addClass("buttonClick");
+                setTimeout(function () {
+                    $("#green").removeClass("buttonClick");
+                }, 250);
+                break;
+            case 2:
+                $("#orange").addClass("buttonClick");
+                setTimeout(function () {
+                    $("#orange").removeClass("buttonClick");
+                }, 250);
+                break;
+            case 3:
+                $("#blue").addClass("buttonClick");
+                setTimeout(function () {
+                    $("#blue").removeClass("buttonClick");
+                }, 250);
+        }   
+    }
+
+    function levelUp() {
+        roundNum++;
+        $("#round").text(`${roundNum}`); 
+    }
+
+    //This converts the players clicks into numbers and pushes it to a new array.
+    $(".buttons").click(function(){
+        let playerClicks= $(this).attr("id");
+
+        switch(playerClicks){
+            case "lilac":
+                randomSequence(0);
+                playerSequence.push(0);                
+                break;
+
+            case "green":
+                randomSequence(1);
+                playerSequence.push(1);                
+                break;
+            
+            case "orange":
+                randomSequence(2);
+                playerSequence.push(2);                
+                break;
+            
+            case "blue":
+                randomSequence(3);
+                playerSequence.push(3);                
+                break;
+            }
+        checkSequence(playerSequence.length -1);
+    }); 
+    
+    //This checks if the sequences is correct so far
+    function checkSequence(indexArr) { 
+
+        if((sequence[indexArr] === playerSequence[indexArr]) && (sequence.length === playerSequence.length)) {
+
+            setTimeout(function () {
+                levelUp();
+                gamePlay();
+            }, 1500);
+        } else {
+            errorMsg();
+        }
+    }
+
+    // Calls error message
+    function errorMsg() {
+        $("button").css("background-color", "red")
+        $("h6").text("Game Over");
+        setTimeout(function () {
+            $("h6").text("Press Start button to try again");
+            $("button").css("background-color", "green");
+        }, 1500);
+        roundNum = 0;
+        sequence = [];
+    }
+
+});
