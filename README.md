@@ -18,7 +18,7 @@
 7. [Credits](#credits)
 8. [WireFrames](#wireframes)
 9. [Media](#media)
-10.[Acknowledgements](#Acknowledgements)
+10. [Acknowledgements](#Acknowledgements)
 
 
 # Introduction
@@ -30,7 +30,6 @@ Sadly it broke after a few years and was never replaced. Through the years I hav
 When the MS2 project was presented I instantly decided to recreate my childhood game as a modern web version.
 
 # UX
-
 As the developer I aim for a fun and relaxing game that offers a break from the stress of everyday life. The concept is easy; 
 Follow along a random generated sequence that increments itself when you get the current sequence right. If not, the game is over. 
 The interface should be easy for the user to understand no matter the age. The complexity comes with the incrementation of sequence.
@@ -65,7 +64,6 @@ CSS styling was used by utilizing Bootstrap framework. The code snippets have be
 Javascript and JQuery was used for writing the logic behind the interactivity
 
 # Testing
-
 I have run it through:
 JS Hint
 HTML Validator
@@ -90,7 +88,7 @@ My main issue in the memory.js file is probably the use of Switch statement, whe
 Through all the testing and trying to fix the mechanism I got it working for round 1 of the game. It does not continue correctly on to round 2 and beyond.
 parallell to assessment..
 
-## Updated sept/oct 2021, manual testing and trouble shooting
+### Updated sept/oct 2021, manual testing and trouble shooting
 After reading up on the code again. I notice several mistakes I missed earlier.
 - The footer is not responsive on smaller sizes.
 - The Counter is not properly set up. Starts at 0 when beginning to play.
@@ -101,7 +99,7 @@ After reading up on the code again. I notice several mistakes I missed earlier.
 
 Instead of messing up the code once again I duplicated the code to a new file called gamemechanics.js. I also decided that this is a more apt name for the JS file so have continued with this name insted, updating all references to the script file.
 
-## Manual&nbsp;Testing
+### Manual&nbsp;Testing
 1. The footer was set as fixed to bottom. Removed that. Now responsiveness is better.
 2. Changed the round counter to start on 1 insted of 0.
 3. I believe that my code for playerSequence() is wrong. I decide to remove it from the gameplay(). (it still exists as a separate functions in the file, for now…)
@@ -127,7 +125,6 @@ I am pleased with the testing and overall mechanics of the game. I will continue
 It is published using Github pages: https://d99mli.github.io/ms2-memorygame/
 
 # Credits
-
 I have used Stackoverflow extensively during the Javascript/JQuery parts of the course. 
 
 ## Wireframes
@@ -141,5 +138,4 @@ https://i.ytimg.com/vi/1Yqj76Q4jJ4/maxresdefault.jpg
 all other pictures are from the developer of this web game.
 
 ## Acknowledgements
-
 Big thanks to Code Institute Tutors for the patience in helping me the last days with bug fixing!
