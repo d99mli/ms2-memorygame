@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let sequence = [];
     let playerSequence = [];
     let roundNum = 0;
-    
-    // var scoreNum = 0;  Do I need this function in this releasse??
-
+ 
     // This starts the game when clicking the start button which calls gamePlay
     $(document).ready(function(){
         $("#start-button").click(function(){
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sequence.push(randomNum); 
         randomSequence(sequence[sequence.length -1]);
         playerSequence = [];
-        //levelUp(); Tried setting levelUp last, was before playerSequence. Have moved it to line 98
     }
 
     // This sets the array index of each button and respective color and sets the action of "lighting up"
@@ -32,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 $("#lilac").addClass("buttonClick");
                 setTimeout(function(){
                     $("#lilac").removeClass("buttonClick");
-                }, 250);    //changed from 400 to 750 and created new class in style.css called buttonClick
+                }, 250);
                 break;
             case 1:
                 $("#green").addClass("buttonClick");
@@ -51,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function () {
                     $("#blue").removeClass("buttonClick");
                 }, 250);
+                break;
         }   
     }
 
@@ -95,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if(sequence.length === playerSequence.length) {
 
                 setTimeout(function () {
-                    //levelUp();
                     gamePlay();
                 }, 1500);
             }
