@@ -1,14 +1,17 @@
+# A Visual Memory Game - Milestone 2 Project by Mikael Lindberg
 ![Digital version of Simon Game](/assets/img/simon_says.jpg "Digital version Simon Board Game by Mikael Lindberg")
 
-## A Visual Memory Game - Milestone 2 Project by Mikael Lindberg
+# Table of Contents
+1. [Introduction](#Introduction)
+6. [Technologies Used](#Technologies)
 
+## Introduction
 The inspiration for this project comes from a electronic console of a childrens toy called Simon. 
 ![Simon Game Board Game](/assets/img/simon_board.jpg "Original Simon Board Game")
 
 I loved playing it and spent hours trying to outperform my last attempt.
 Sadly it broke after a few years and was never replaced. Through the years I have on many occasions had fond flashbacks from my times playing the game. 
 When the MS2 project was presented I instantly decided to recreate my childhood game as a modern web version.
-
 
 # UX
 
@@ -37,7 +40,7 @@ A single webpage, with three distinct sections, a header for the "logo", the mai
 - Function to compete with friends in pairs. Not applicable when playing on smaller devices. 
 - Highscore function that saves the scores of top 5-10 players. Will implement an input field that saves the top 10 user names.
 
-# Technologies Used 
+# Technologies 
 
 CSS styling was used by utilizing Bootstrap framework. The code snippets have been implemented from [Bootstrap](getbootstrap.com).
 Javascript and JQuery was used for writing the logic behind the interactivity
