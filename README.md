@@ -1,10 +1,14 @@
-# Simon Says!
+!Digital version of Simon Game](/assets/img/simon_says.jpg "Digital version Simon Board Game by Mikael Lindberg")
 
 ## A Visual Memory Game - Milestone 2 Project by Mikael Lindberg
 
-The inspiration for this project comes from a electronic console of a childrens toy called Simon. I loved playing it and spent hours trying to outperform my last attempt.
+The inspiration for this project comes from a electronic console of a childrens toy called Simon. 
+![Simon Game Board Game](/assets/img/simon_board.jpg "Original Simon Board Game")
+
+I loved playing it and spent hours trying to outperform my last attempt.
 Sadly it broke after a few years and was never replaced. Through the years I have on many occasions had fond flashbacks from my times playing the game. 
 When the MS2 project was presented I instantly decided to recreate my childhood game with a few modern upgrades.
+
 
 # UX
 
