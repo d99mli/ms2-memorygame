@@ -101,21 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             errorMsg();
+            roundNum = 0;
+            sequence = [];
         }
     }
 
     // Calls error message
     function errorMsg() {
         $("button").css("background-color", "#d3cfcf")
-        $("h6").text("Game Over");
-        $(".game-area").css("background-color", "red")
+        $("button").text("Game Over");
+        $("button").css("color", "black");
+        $(".game-area").css("background-color", "#cc0000")
         setTimeout(function () {
-            $("h6").text("Press Start button to try again");
+            $("button").text("Start New Game");
+            $("button").css("color", "#eee");
             $("button").css("background-color", "green");
             $(".game-area").css("background-color", "#d3cfcf")
         }, 3500);
-        roundNum = 0;
-        sequence = [];
     }
-
 });
