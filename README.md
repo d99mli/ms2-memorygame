@@ -1,4 +1,4 @@
-!Digital version of Simon Game](/assets/img/simon_says.jpg "Digital version Simon Board Game by Mikael Lindberg")
+![Digital version of Simon Game](/assets/img/simon_says.jpg "Digital version Simon Board Game by Mikael Lindberg")
 
 ## A Visual Memory Game - Milestone 2 Project by Mikael Lindberg
 
@@ -7,14 +7,14 @@ The inspiration for this project comes from a electronic console of a childrens 
 
 I loved playing it and spent hours trying to outperform my last attempt.
 Sadly it broke after a few years and was never replaced. Through the years I have on many occasions had fond flashbacks from my times playing the game. 
-When the MS2 project was presented I instantly decided to recreate my childhood game with a few modern upgrades.
+When the MS2 project was presented I instantly decided to recreate my childhood game as a modern web version.
 
 
 # UX
 
 As the developer I aim for a fun and relaxing game that offers a break from the stress of everyday life. The concept is easy; 
 Follow along a random generated sequence that increments itself when you get the current sequence right. If not, the game is over. 
-The interface should be aesy for the user to understand.
+The interface should be easy for the user to understand no matter the age. The complexity comes with the incrementation of sequence.
 
 ## User Stories
 - The game should offer different levels of difficulty depending on age/preference of the player 
@@ -26,16 +26,16 @@ The interface should be aesy for the user to understand.
 # Features
 A single webpage, with three distinct sections, a header for the "logo", the main playing section and a footer at the bottom.
 
-- Colored boxes as playing "buttons".
-- A couple of <buttons> for different features of the game, start/pause, reset, difficulties
+- Colored boxes as playing "buttons"
     the buttons use javascript to change the layout of the webpage.
+- Navigation to rules and Highscore sections.
 - A score function of current player's accomplished level.
 
 ## Features in upcoming releases
 
-- Different levels of difficulty depending on age/preference of the player 
-- Function to compete with friends in pairs.
-- Highscore function that saves the scores of top 5-10 players
+- Different levels of difficulty depending on age/preference of the player. Have decided that the difficulty comes from the incrementation of rounds. Perhaps a function that highlights the buttons longer will make it easier for younger players.
+- Function to compete with friends in pairs. Not applicable when playing on smaller devices. 
+- Highscore function that saves the scores of top 5-10 players. Will implement an input field that saves the top 10 user names.
 
 # Technologies Used 
 

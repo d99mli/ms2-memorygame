@@ -105,15 +105,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calls error message
     function errorMsg() {
-        $("button").css("background-color", "#d3cfcf")
+        $("button").css("background-color", "#d3cfcf");
         $("button").text("Game Over");
         $("button").css("color", "black");
-        $(".game-area").css("background-color", "#cc0000")
+        $(".game-area").css("background-color", "#cc0000");
         setTimeout(function () {
             $("button").text("Start New Game");
             $("button").css("color", "#eee");
             $("button").css("background-color", "green");
-            $(".game-area").css("background-color", "#d3cfcf")
+            $(".game-area").css("background-color", "#d3cfcf");
         }, 3500);
     }
 });
