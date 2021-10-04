@@ -90,12 +90,15 @@ document.addEventListener('DOMContentLoaded', function() {
     //This checks if the sequences is correct so far
     function checkSequence(indexArr) { 
 
-        if((sequence[indexArr] === playerSequence[indexArr]) && (sequence.length === playerSequence.length)) {
+        if(sequence[indexArr] === playerSequence[indexArr]) {
 
-            setTimeout(function () {
-                levelUp();
-                gamePlay();
-            }, 1500);
+            if(sequence.length === playerSequence.length) {
+
+                setTimeout(function () {
+                    //levelUp();
+                    gamePlay();
+                }, 1500);
+            }
         } else {
             errorMsg();
         }
@@ -103,12 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calls error message
     function errorMsg() {
-        $("button").css("background-color", "red")
+        $("button").css("background-color", "#d3cfcf")
         $("h6").text("Game Over");
+        $(".game-area").css("background-color", "red")
         setTimeout(function () {
             $("h6").text("Press Start button to try again");
             $("button").css("background-color", "green");
-        }, 1500);
+            $(".game-area").css("background-color", "#d3cfcf")
+        }, 3500);
         roundNum = 0;
         sequence = [];
     }
